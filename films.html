@@ -85,8 +85,8 @@
         mounted() {
             AOS.init();
             AOS.refresh();
-            letscene = document.getElementById('scene');
-            letparallaxInstance = new Parallax(scene);
+            let scene = document.getElementById('scene');
+            let parallaxInstance = new Parallax(scene);
         },
         methods: {
             bookMore(event) {

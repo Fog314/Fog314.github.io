@@ -93,8 +93,8 @@
         document.addEventListener("DOMContentLoaded", () => {
             AOS.init();
             AOS.refresh();
-            letscene = document.getElementById('scene');
-            letparallaxInstance = new Parallax(scene);
+            let scene = document.getElementById('scene');
+            let parallaxInstance = new Parallax(scene);
             $('.marquee').marquee({
                 gap: 500,
                 duplicated: true,
