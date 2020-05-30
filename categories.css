@@ -1,0 +1,181 @@
+.workspace {
+  height: 2250px;
+  min-height: unset;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.workspace .first-screen {
+  background: transparent;
+  height: 900px;
+}
+
+.workspace .second-screen {
+  background: transparent;
+  font-size: 24px;
+}
+
+.workspace .second-screen_content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-gap: 50px;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.workspace .wrapper-cart {
+  width: 550px;
+  height: 500px;
+  border-radius: 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  position: relative;
+  -webkit-transition: all 0.3s !important;
+  transition: all 0.3s !important;
+}
+
+.workspace .wrapper-cart:hover {
+  border: none;
+  -webkit-box-shadow: 0px 0px 20px black;
+          box-shadow: 0px 0px 20px black;
+}
+
+.workspace .wrapper-cart__pic {
+  height: 250px;
+  background-size: cover;
+  background-position: 50% 20%;
+  border-radius: 14px 14px 0px 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.workspace .wrapper-cart__about {
+  opacity: 0;
+  width: 80%;
+  height: 250px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 30%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: justify;
+}
+
+.workspace .wrapper-cart__title {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 150%;
+  position: absolute;
+  left: 50%;
+  bottom: 30%;
+  width: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.workspace .wrapper-cart__author {
+  color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 150%;
+  position: absolute;
+  left: 50%;
+  bottom: 24%;
+  width: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 90%;
+}
+
+.workspace .wrapper-cart__button {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 50px;
+}
+
+.workspace .wrapper-cart__button button {
+  height: 50px;
+  width: 250px;
+  border: 2px solid gray;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 100px;
+  background: white;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px !important;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  color: gray;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.workspace .wrapper-cart__button button:active, .workspace .wrapper-cart__button button:focus {
+  outline: none;
+}
+
+.workspace .wrapper-cart__button button:hover {
+  border: none;
+  background-color: gray;
+  color: white;
+  -webkit-box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+.workspace .wrapper-cart.active {
+  background: transparent;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 20px black;
+          box-shadow: 0px 0px 20px black;
+}
+
+.workspace .wrapper-cart.active .wrapper-cart__pic {
+  height: 100%;
+  -webkit-filter: blur(5px) brightness(0.4);
+          filter: blur(5px) brightness(0.4);
+}
+
+.workspace .wrapper-cart.active .wrapper-cart__about {
+  display: block;
+  opacity: 1;
+}
+
+.workspace .wrapper-cart.active .wrapper-cart__title {
+  color: white;
+}
+
+.workspace .wrapper-cart.active .wrapper-cart__button button {
+  background: rgba(128, 128, 128, 0.452);
+  color: white;
+}
+/*# sourceMappingURL=categories.css.map */
