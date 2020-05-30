@@ -123,6 +123,18 @@ body {
   text-shadow: 3px 3px 5px white;
 }
 
+.footer {
+  height: 40px;
+  border-top: 2px solid gray;
+  background: rgba(0, 0, 0, 0.89);
+  color: rgb(211, 211, 211);
+  font-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .workspace {
   height: 4940px;
   color: white;
