@@ -98,7 +98,7 @@ body {
   transition: all 0.3s;
 }
 
-ul {
+.header ul {
   display: flex;
   flex-direction: row;
   flex: 2;
@@ -106,16 +106,11 @@ ul {
   text-align: center;
 }
 
-li {
+.header li {
+  list-style-type: none;
   list-style-type: none;
   text-align: center;
   flex-grow: 1;
-}
-
-.header li {
-  display: inline;
-  list-style-type: none;
-  margin: 150px;
 }
 
 .header li a {
