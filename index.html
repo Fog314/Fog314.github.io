@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Главная</title>
     <link rel="stylesheet" href="./styles/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -93,8 +93,8 @@
         document.addEventListener("DOMContentLoaded", () => {
             AOS.init();
             AOS.refresh();
-            var scene = document.getElementById('scene');
-            var parallaxInstance = new Parallax(scene);
+            letscene = document.getElementById('scene');
+            letparallaxInstance = new Parallax(scene);
             $('.marquee').marquee({
                 gap: 500,
                 duplicated: true,

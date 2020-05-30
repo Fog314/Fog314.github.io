@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Фильмы</title>
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/categories.css">
@@ -85,8 +85,8 @@
         mounted() {
             AOS.init();
             AOS.refresh();
-            var scene = document.getElementById('scene');
-            var parallaxInstance = new Parallax(scene);
+            letscene = document.getElementById('scene');
+            letparallaxInstance = new Parallax(scene);
         },
         methods: {
             bookMore(event) {
