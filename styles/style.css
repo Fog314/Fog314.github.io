@@ -126,7 +126,7 @@ body {
 .footer {
   height: 40px;
   border-top: 2px solid gray;
-  background: rgba(0, 0, 0, 0.89);
+  background: rgba(0, 0, 0, 0.85);
   color: rgb(211, 211, 211);
   font-size: 100%;
   display: flex;
