@@ -18,7 +18,7 @@
             <li><a href="films.html">Фильмы</a></li>
             <li><a href="books.html">Книги</a></li>
             <li><a href="persons.html">Люди</a></li>
-            
+
         </ul>
     </div>
     <div class="workspace" style='background: url("./pics/hobbies-background.jpg");'>
@@ -32,7 +32,8 @@
         </div>
         <div class="second-screen">
             <div class="second-screen_content">
-                <div v-for="item in books" class="wrapper-cart" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                <div v-for="item in books" class="wrapper-cart" data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom">
                     <div class="wrapper-cart__pic" :style="{backgroundImage: `url(${item.pic})`}"></div>
                     <div class="wrapper-cart__about">{{item.about}}</div>
                     <div class="wrapper-cart__title">
@@ -50,48 +51,50 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script>
-    new Vue({
-        el: '.workspace',
-        data() {
-            return {
-                books: [{
-                        title: 'Веб-разработка',
-                        about: 'Очень люблю эту сферу ИТ. Интернетом пользуются все, работа в этом направлении как никогда актуально и интересна.',
-                        pic: './pics/web.jpg',
-                    },
-                    {
-                        title: 'Музыка',
-                        about: 'Когда нужно поработать или наоборот расслабиться. Когда нужно скрасить время в дороге. Когда нужно поднять настроение. Музыка всегда со мной.',
-                        pic: './pics/music.jpg',
-                    },
-                    {
-                        title: 'Чтение',
-                        about: 'В нынешнее время, когда любую литературу можно найти за пару минут, чтение хороших книг должно стать обязанностью.',
-                        pic: './pics/books.jpg',
-                    },
-                    {
-                        title: 'Видеоигры',
-                        about: 'Когда я был младше, всё свободное время я играл в видеоигры. Сейчас намного больше забот, но когда выдаётся возможность поиграть, меня уговаривать не нужно.',
-                        pic: './pics/games.jpg',
-                    },
-                ]
-            }
-        },
-        mounted() {
-            AOS.init();
-            AOS.refresh();
-        },
-        methods: {
-            bookMore(event) {
-                if(event.target.textContent === 'Подробнее'){
-                    event.target.textContent = 'Назад'
-                } else {
-                    event.target.textContent = 'Подробнее'
+    window.onload = function () {
+        new Vue({
+            el: '.workspace',
+            data() {
+                return {
+                    books: [{
+                            title: 'Веб-разработка',
+                            about: 'Очень люблю эту сферу ИТ. Интернетом пользуются все, работа в этом направлении как никогда актуально и интересна.',
+                            pic: './pics/web.jpg',
+                        },
+                        {
+                            title: 'Музыка',
+                            about: 'Когда нужно поработать или наоборот расслабиться. Когда нужно скрасить время в дороге. Когда нужно поднять настроение. Музыка всегда со мной.',
+                            pic: './pics/music.jpg',
+                        },
+                        {
+                            title: 'Чтение',
+                            about: 'В нынешнее время, когда любую литературу можно найти за пару минут, чтение хороших книг должно стать обязанностью.',
+                            pic: './pics/books.jpg',
+                        },
+                        {
+                            title: 'Видеоигры',
+                            about: 'Когда я был младше, всё свободное время я играл в видеоигры. Сейчас намного больше забот, но когда выдаётся возможность поиграть, меня уговаривать не нужно.',
+                            pic: './pics/games.jpg',
+                        },
+                    ]
                 }
-                event.target.parentNode.parentNode.classList.toggle('active');
+            },
+            mounted() {
+                AOS.init();
+                AOS.refresh();
+            },
+            methods: {
+                bookMore(event) {
+                    if (event.target.textContent === 'Подробнее') {
+                        event.target.textContent = 'Назад'
+                    } else {
+                        event.target.textContent = 'Подробнее'
+                    }
+                    event.target.parentNode.parentNode.classList.toggle('active');
+                }
             }
-        }
-    })
+        })
+    };
 </script>
 
 </html>

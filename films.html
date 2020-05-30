@@ -51,54 +51,56 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script>
-    new Vue({
-        el: '.workspace',
-        data() {
-            return {
-                books: [{
-                        title: 'Интерстеллар',
-                        author: 'К.Ноллан',
-                        about: 'Фильм об огромной тяге человека к космосу, о величии нашего вида и о том, насколько сильно мы толкаем планету к гибели.',
-                        pic: './pics/interstellar.jpg',
-                    },
-                    {
-                        title: 'Брат',
-                        author: 'А.Балабанов',
-                        about: 'Балабанову в этом фильме удалось точно передать настроение эпохи и создать для людей супергероя, когда он был так нужен.',
-                        pic: './pics/brat.jpg',
-                    },
-                    {
-                        title: 'Жить',
-                        author: 'Ю.Быков',
-                        about: 'Режисёр заставляет нас подумать о том, на что мы готовы пойти ради своей жизни.',
-                        pic: './pics/zhit.jpg',
-                    },
-                    {
-                        title: 'Джокер',
-                        author: 'Т.Филлипс',
-                        about: 'Насколько же трудно не сойти с ума в нашем мире',
-                        pic: './pics/joker.jpg',
-                    },
-                ]
-            }
-        },
-        mounted() {
-            AOS.init();
-            AOS.refresh();
-            let scene = document.getElementById('scene');
-            let parallaxInstance = new Parallax(scene);
-        },
-        methods: {
-            bookMore(event) {
-                if (event.target.textContent === 'Подробнее') {
-                    event.target.textContent = 'Назад'
-                } else {
-                    event.target.textContent = 'Подробнее'
+    window.onload = function () {
+        new Vue({
+            el: '.workspace',
+            data() {
+                return {
+                    books: [{
+                            title: 'Интерстеллар',
+                            author: 'К.Ноллан',
+                            about: 'Фильм об огромной тяге человека к космосу, о величии нашего вида и о том, насколько сильно мы толкаем планету к гибели.',
+                            pic: './pics/interstellar.jpg',
+                        },
+                        {
+                            title: 'Брат',
+                            author: 'А.Балабанов',
+                            about: 'Балабанову в этом фильме удалось точно передать настроение эпохи и создать для людей супергероя, когда он был так нужен.',
+                            pic: './pics/brat.jpg',
+                        },
+                        {
+                            title: 'Жить',
+                            author: 'Ю.Быков',
+                            about: 'Режисёр заставляет нас подумать о том, на что мы готовы пойти ради своей жизни.',
+                            pic: './pics/zhit.jpg',
+                        },
+                        {
+                            title: 'Джокер',
+                            author: 'Т.Филлипс',
+                            about: 'Насколько же трудно не сойти с ума в нашем мире',
+                            pic: './pics/joker.jpg',
+                        },
+                    ]
                 }
-                event.target.parentNode.parentNode.classList.toggle('active');
+            },
+            mounted() {
+                AOS.init();
+                AOS.refresh();
+                let scene = document.getElementById('scene');
+                let parallaxInstance = new Parallax(scene);
+            },
+            methods: {
+                bookMore(event) {
+                    if (event.target.textContent === 'Подробнее') {
+                        event.target.textContent = 'Назад'
+                    } else {
+                        event.target.textContent = 'Подробнее'
+                    }
+                    event.target.parentNode.parentNode.classList.toggle('active');
+                }
             }
-        }
-    })
+        })
+    };
 </script>
 
 </html>

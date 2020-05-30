@@ -50,52 +50,54 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script>
-    new Vue({
-        el: '.workspace',
-        data() {
-            return {
-                books: [{
-                        title: 'Джобс',
-                        author: 'Стив',
-                        about: 'Человек, повлиявший почти на все сферы жизни людей и определивший то, как будет выглядеть техника на десятилетия вперёд.',
-                        pic: './pics/jobs.png',
-                    },
-                    {
-                        title: 'Гагарин',
-                        author: 'Юрий',
-                        about: 'Первый человек, который побывал в космосе, но при этом оставался абсолюто земным. Тот, кто показал миру, что русский человек не такой, каким его хотят все видеть.',
-                        pic: './pics/gagarin.jpg',
-                    },
-                    {
-                        title: 'Хокинг',
-                        author: 'Стивен',
-                        about: 'Учёный, который полностью потерял возможность двигаться и говорить, но не потерял силы и свою веру в науку. Популяризатор физики, астрономии и просто достойный человек.',
-                        pic: './pics/hawking.jpg',
-                    },
-                    {
-                        title: 'Ургант',
-                        author: 'Иван',
-                        about: 'Лучший человек на Российском телевидении. Очень образованный, остроумный и рефлексирующий',
-                        pic: './pics/urgant.jpg',
-                    },
-                ]
-            }
-        },
-        mounted() {
-            AOS.init();
-            AOS.refresh();
-        },
-        methods: {
-            bookMore(event) {
-                if (event.target.textContent === 'Подробнее') {
-                    event.target.textContent = 'Назад'
-                } else {
-                    event.target.textContent = 'Подробнее'
+    window.onload = function() {
+        new Vue({
+            el: '.workspace',
+            data() {
+                return {
+                    books: [{
+                            title: 'Джобс',
+                            author: 'Стив',
+                            about: 'Человек, повлиявший почти на все сферы жизни людей и определивший то, как будет выглядеть техника на десятилетия вперёд.',
+                            pic: './pics/jobs.png',
+                        },
+                        {
+                            title: 'Гагарин',
+                            author: 'Юрий',
+                            about: 'Первый человек, который побывал в космосе, но при этом оставался абсолюто земным. Тот, кто показал миру, что русский человек не такой, каким его хотят все видеть.',
+                            pic: './pics/gagarin.jpg',
+                        },
+                        {
+                            title: 'Хокинг',
+                            author: 'Стивен',
+                            about: 'Учёный, который полностью потерял возможность двигаться и говорить, но не потерял силы и свою веру в науку. Популяризатор физики, астрономии и просто достойный человек.',
+                            pic: './pics/hawking.jpg',
+                        },
+                        {
+                            title: 'Ургант',
+                            author: 'Иван',
+                            about: 'Лучший человек на Российском телевидении. Очень образованный, остроумный и рефлексирующий',
+                            pic: './pics/urgant.jpg',
+                        },
+                    ]
                 }
-                event.target.parentNode.parentNode.classList.toggle('active');
+            },
+            mounted() {
+                AOS.init();
+                AOS.refresh();
+            },
+            methods: {
+                bookMore(event) {
+                    if (event.target.textContent === 'Подробнее') {
+                        event.target.textContent = 'Назад'
+                    } else {
+                        event.target.textContent = 'Подробнее'
+                    }
+                    event.target.parentNode.parentNode.classList.toggle('active');
+                }
             }
-        }
-    })
+        })
+    }
 </script>
 
 </html>

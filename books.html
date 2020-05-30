@@ -51,52 +51,54 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script>
-    new Vue({
-        el: '.workspace',
-        data() {
-            return {
-                books: [{
-                        title: 'Пикник на обочине',
-                        author: 'Братья Стругацкие',
-                        about: 'Это книга, с которой я познакомлся с творчеством Стругацких. Книга о судьбе, о счастье и о том, на что мы готовы пойти ради него.',
-                        pic: './pics/piknik.jpg',
-                    },
-                    {
-                        title: 'Град обречённый',
-                        author: 'Братья Стругацкие',
-                        about: 'Книга о непростых человеческих взаимоотношениях и о том, что всеми нами движет.',
-                        pic: './pics/grad.jpg',
-                    },
-                    {
-                        title: 'Преступление и наказание',
-                        author: 'Ф.М.Достоевский',
-                        about: 'Бессмертная классика о душевных терзаниях, поступках и искуплении.',
-                        pic: './pics/crimeAP.jpeg',
-                    },
-                    {
-                        title: '1984',
-                        author: 'Д.Оруэлл',
-                        about: 'Книга об античеловеческой природе тоталитаризма.',
-                        pic: './pics/bBrother.jpg',
-                    },
-                ]
-            }
-        },
-        mounted() {
-            AOS.init();
-            AOS.refresh();
-        },
-        methods: {
-            bookMore(event) {
-                if (event.target.textContent === 'Подробнее') {
-                    event.target.textContent = 'Назад'
-                } else {
-                    event.target.textContent = 'Подробнее'
+    window.onload = function() {
+        new Vue({
+            el: '.workspace',
+            data() {
+                return {
+                    books: [{
+                            title: 'Пикник на обочине',
+                            author: 'Братья Стругацкие',
+                            about: 'Это книга, с которой я познакомлся с творчеством Стругацких. Книга о судьбе, о счастье и о том, на что мы готовы пойти ради него.',
+                            pic: './pics/piknik.jpg',
+                        },
+                        {
+                            title: 'Град обречённый',
+                            author: 'Братья Стругацкие',
+                            about: 'Книга о непростых человеческих взаимоотношениях и о том, что всеми нами движет.',
+                            pic: './pics/grad.jpg',
+                        },
+                        {
+                            title: 'Преступление и наказание',
+                            author: 'Ф.М.Достоевский',
+                            about: 'Бессмертная классика о душевных терзаниях, поступках и искуплении.',
+                            pic: './pics/crimeAP.jpeg',
+                        },
+                        {
+                            title: '1984',
+                            author: 'Д.Оруэлл',
+                            about: 'Книга об античеловеческой природе тоталитаризма.',
+                            pic: './pics/bBrother.jpg',
+                        },
+                    ]
                 }
-                event.target.parentNode.parentNode.classList.toggle('active');
+            },
+            mounted() {
+                AOS.init();
+                AOS.refresh();
+            },
+            methods: {
+                bookMore(event) {
+                    if (event.target.textContent === 'Подробнее') {
+                        event.target.textContent = 'Назад'
+                    } else {
+                        event.target.textContent = 'Подробнее'
+                    }
+                    event.target.parentNode.parentNode.classList.toggle('active');
+                }
             }
-        }
-    })
+        })
+    };
 </script>
 
 </html>
