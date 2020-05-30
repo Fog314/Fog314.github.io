@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="categories.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="hobbies.html">Хобби</a></li>
+            <li><a href="films.html">Фильмы</a></li>
+            <li><a href="persons.html">Люди</a></li>
+        </ul>
+    </div>
+    <div class="workspace" style='background-image: url("./books-background.jpg");'>
+        <div class="first-screen">
+            <div class="first-screen__title vibrate" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
+                Книги
+            </div>
+            <div class="first-screen__about" data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000">
+                которые я советую
+            </div>
+        </div>
+        <div class="second-screen">
+            <div class="second-screen_content">
+                <div v-for="item in books" class="wrapper-cart" data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom">
+                    <div class="wrapper-cart__pic" :style="{backgroundImage: `url(${item.pic})`}"></div>
+                    <div class="wrapper-cart__about">{{item.about}}</div>
+                    <div class="wrapper-cart__title">
+                        {{item.title}}
+                    </div>
+                    <div class="wrapper-cart__author">
+                        {{item.author}}
+                    </div>
+                    <div class="wrapper-cart__button"><button @click="bookMore">Подробнее</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script>
+    new Vue({
+        el: '.workspace',
+        data() {
+            return {
+                books: [{
+                        title: 'Пикник на обочине',
+                        author: 'Братья Стругацкие',
+                        about: 'Это книга, с которой я познакомлся с творчеством Стругацких. Книга о судьбе, о счастье и о том, на что мы готовы пойти ради него.',
+                        pic: 'https://madmuseum.org/sites/default/files/2015/03/SERIES%20HERO_Stalker%2C%201976%2C%20Andrei%20Tarkovsky%2C%20image%20courtesy%20of%20Kino%20Lorber.jpg',
+                    },
+                    {
+                        title: 'Град обречённый',
+                        author: 'Братья Стругацкие',
+                        about: 'Книга о непростых человеческих взаимоотношениях и о том, что всеми нами движет.',
+                        pic: 'https://ic.pics.livejournal.com/gmichailov/34987738/1162864/1162864_900.jpg',
+                    },
+                    {
+                        title: 'Преступление и наказание',
+                        author: 'Ф.М.Достоевский',
+                        about: 'Бессмертная классика о душевных терзаниях, поступках и искуплении.',
+                        pic: 'https://briefly.ru/static/cache/films/720/90.jpeg?1579583737',
+                    },
+                    {
+                        title: '1984',
+                        author: 'Д.Оруэлл',
+                        about: 'Книга об античеловеческой природе тоталитаризма.',
+                        pic: 'https://lh3.googleusercontent.com/proxy/uHsHKhYrf7MgyZ71_zzp5YW01ZHVB6ZqwcxvuD5W-ZybJfqQl5fXW3QOu3LxL8x84YpyCv9j-6Hz5ESXHF6OSnlRIQbxfZOCl80FD4qBv1eXzPJ6i494',
+                    },
+                ]
+            }
+        },
+        mounted() {
+            AOS.init();
+            AOS.refresh();
+        },
+        methods: {
+            bookMore(event) {
+                if (event.target.textContent === 'Подробнее') {
+                    event.target.textContent = 'Назад'
+                } else {
+                    event.target.textContent = 'Подробнее'
+                }
+                event.target.parentNode.parentNode.classList.toggle('active');
+            }
+        }
+    })
+</script>
+
+</html>

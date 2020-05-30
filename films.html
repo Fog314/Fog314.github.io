@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="categories.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="hobbies.html">Хобби</a></li>
+            <li><a href="books.html">Книги</a></li>
+            <li><a href="persons.html">Люди</a></li>
+        </ul>
+    </div>
+    <div class="workspace" style='background: url("./films-background.jpg");'>
+        <div class="first-screen">
+            <div class="first-screen__title vibrate" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
+                Фильмы
+            </div>
+            <div class="first-screen__about" data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000">
+                которые я люблю
+            </div>
+        </div>
+        <div class="second-screen">
+            <div class="second-screen_content">
+                <div v-for="item in books" class="wrapper-cart" data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom">
+                    <div class="wrapper-cart__pic" :style="{backgroundImage: `url(${item.pic})`}"></div>
+                    <div class="wrapper-cart__about">{{item.about}}</div>
+                    <div class="wrapper-cart__title">
+                        {{item.title}}
+                    </div>
+                    <div class="wrapper-cart__author">
+                        {{item.author}}
+                    </div>
+                    <div class="wrapper-cart__button"><button @click="bookMore">Подробнее</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script>
+    new Vue({
+        el: '.workspace',
+        data() {
+            return {
+                books: [{
+                        title: 'Интерстеллар',
+                        author: 'К.Ноллан',
+                        about: 'Фильм об огромной тяге человека к космосу, о величии нашего вида и о том, насколько сильно мы толкаем планету к гибели.',
+                        pic: 'https://i.insider.com/546ab754ecad0463484453c2',
+                    },
+                    {
+                        title: 'Брат',
+                        author: 'А.Балабанов',
+                        about: 'Балабанову в этом фильме удалось точно передать настроение эпохи и создать для людей супергероя, когда он был так нужен.',
+                        pic: 'https://rostof.ru/sites/default/files/styles/main_1200x610/public/field/image/article/01_3.jpg?itok=5A_UhzJE',
+                    },
+                    {
+                        title: 'Жить',
+                        author: 'Ю.Быков',
+                        about: 'Режисёр заставляет нас подумать о том, на что мы готовы пойти ради своей жизни.',
+                        pic: 'https://sun9-34.userapi.com/c851328/v851328179/d194c/AadE3s4G7JQ.jpg',
+                    },
+                    {
+                        title: 'Джокер',
+                        author: 'Т.Филлипс',
+                        about: 'Насколько же трудно не сойти с ума в нашем мире',
+                        pic: 'https://i.ytimg.com/vi/50IJyz7ecqc/maxresdefault.jpg',
+                    },
+                ]
+            }
+        },
+        mounted() {
+            AOS.init();
+            AOS.refresh();
+            var scene = document.getElementById('scene');
+            var parallaxInstance = new Parallax(scene);
+        },
+        methods: {
+            bookMore(event) {
+                if (event.target.textContent === 'Подробнее') {
+                    event.target.textContent = 'Назад'
+                } else {
+                    event.target.textContent = 'Подробнее'
+                }
+                event.target.parentNode.parentNode.classList.toggle('active');
+            }
+        }
+    })
+</script>
+
+</html>
