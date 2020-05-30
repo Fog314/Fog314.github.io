@@ -98,6 +98,14 @@ body {
   transition: all 0.3s;
 }
 
+ul {
+  display: flex;
+  flex-direction: row;
+  flex: 2;
+  padding: 0px;
+  text-align: center;
+}
+
 .header li {
   display: inline;
   list-style-type: none;
